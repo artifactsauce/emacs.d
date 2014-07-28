@@ -28,6 +28,8 @@
  )
 (setq default-directory "~/")
 (electric-pair-mode 1)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 ; Clipboard copy and paste
 (when window-system
   (global-set-key "\C-w" 'clipboard-kill-region)
