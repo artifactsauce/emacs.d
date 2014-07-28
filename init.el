@@ -61,6 +61,10 @@
   (load-theme 'solarized-dark t)
   )
 
+;; magit
+(global-set-key (kbd "C-x v s") 'magit-status)
+(global-set-key (kbd "C-x v l") 'magit-log)
+
 ;; helm
 (require 'helm-config)
 (helm-mode 1)
