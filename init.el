@@ -77,12 +77,6 @@
 (require 'auto-complete)
 (global-auto-complete-mode t)
 
-;; flymake
-(require 'flymake)
-(set-face-background 'flymake-errline "red4")
-(set-face-foreground 'flymake-errline "black")
-(set-face-background 'flymake-warnline "yellow")
-(set-face-foreground 'flymake-warnline "black")
 
 ;; flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
