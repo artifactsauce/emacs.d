@@ -66,15 +66,10 @@
 (global-set-key (kbd "C-x v l") 'magit-log)
 
 ;; helm
-(require 'helm-config)
 (helm-mode 1)
 (global-set-key (kbd "C-c h") 'helm-mini)
 
-;; magit
-(require 'magit)
-
 ;; auto-complete
-(require 'auto-complete)
 (global-auto-complete-mode t)
 
 
@@ -82,8 +77,6 @@
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;; yasnippet
-(require 'yasnippet)
-;; (require 'yasnippet-bundle)
 (yas-global-mode 1)
 (defun shk-yas/helm-prompt (prompt choices &optional display-fn)
   "Use helm to select a snippet. Put this into `yas/prompt-functions.'"
@@ -106,7 +99,6 @@
     nil))
 
 ;; perl
-(autoload 'cperl-mode "cperl-mode" nil t)
 (add-to-list 'auto-mode-alist '("\.\([pP][Llm]\|al\|t\)\'" . cperl-mode))
 (add-to-list 'interpreter-mode-alist '("perl" . cperl-mode))
 (add-to-list 'interpreter-mode-alist '("perl5" . cperl-mode))
@@ -140,7 +132,6 @@
                )))
 
 ;; php
-(autoload 'php-mode "php-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
 (add-to-list 'auto-mode-alist '("\\.ctp$" . php-mode))
 (add-hook 'php-mode-hook
@@ -156,7 +147,6 @@
              ))
 
 ;; ruby
-(autoload 'ruby-mode "ruby-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Rakefile" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Gemfile" . ruby-mode))
@@ -168,11 +158,9 @@
 (add-to-list 'auto-mode-alist '("\\.py$" . python-mode))
 
 ;; javascript
-(autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
 ;; coffeescript
-(autoload 'coffee-mode "coffee-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))
 (add-hook 'coffee-mode-hook
@@ -182,19 +170,15 @@
       (setq coffee-tab-width 2))))
 
 ;; css
-(autoload 'css-mode "css-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.css$" . css-mode))
 
 ;; less
-(autoload 'less-css-mode "less-css-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.less$" . less-css-mode))
 
 ;; yaml
-(autoload 'yaml-mode "yaml-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
 ;; markdown
-(autoload 'markdown-mode "markdown-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 
