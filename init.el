@@ -5,7 +5,7 @@
 ;;; Code:
 
 ;; cask
-(require 'cask "~/.emacs.d/.cask/cask.el")
+(require 'cask "~/.cask/cask.el")
 (cask-initialize)
 
 ;; global setting
