@@ -39,4 +39,5 @@
 (depends-on "less-css-mode")
 (depends-on "yaml-mode")
 (depends-on "markdown-mode")
+(depends-on "nginx-mode")
 (depends-on "solarized-theme")
