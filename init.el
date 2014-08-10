@@ -72,7 +72,6 @@
 ;; auto-complete
 (global-auto-complete-mode t)
 
-
 ;; flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
@@ -103,22 +102,12 @@
 (add-to-list 'interpreter-mode-alist '("perl" . cperl-mode))
 (add-to-list 'interpreter-mode-alist '("perl5" . cperl-mode))
 (add-to-list 'interpreter-mode-alist '("miniperl" . cperl-mode))
-(defalias 'perl-mode 'cperl-mode)
-
-(add-hook 'cperl-mode-hook
-          (lambda ()
-            (local-set-key (kbd "C-h f") 'cperl-perldoc)))
-
-(add-hook 'cperl-mode-hook
-          '(lambda ()
-             (cperl-set-style "PerlStyle")
-             (custom-set-variables
-              '(cperl-close-paren-offset -4)
-              '(cperl-continued-statement-offset 4)
-              '(cperl-indent-level 4)
-              '(cperl-indent-parens-as-block t)
-              '(cperl-tab-always-indent t)
-              )))
+(fset 'perl-mode 'cperl-mode)
+(setq cperl-indent-level 4
+      cperl-close-paren-offset -4
+      cperl-continued-statement-offset 4
+      cperl-indent-parens-as-block t
+      cperl-tab-always-indent t)
 
 (add-hook 'cperl-mode-hook
           '(lambda ()
