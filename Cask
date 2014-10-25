@@ -33,6 +33,7 @@
 (depends-on "ruby-mode")
 (depends-on "ruby-tools")
 (depends-on "ruby-end")
+(depends-on "go-mode")
 (depends-on "js2-mode")
 (depends-on "coffee-mode")
 (depends-on "css-mode")
