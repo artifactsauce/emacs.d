@@ -37,6 +37,7 @@
 (depends-on "js2-mode")
 (depends-on "coffee-mode")
 (depends-on "css-mode")
+(depends-on "sass-mode")
 (depends-on "less-css-mode")
 (depends-on "yaml-mode")
 (depends-on "markdown-mode")
