@@ -148,6 +148,9 @@
 
 ;; javascript
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(setq c-basic-offset 4
+      js2-basic-offset 4
+      indent-tabs-mode nil)
 
 ;; coffeescript
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
@@ -160,6 +163,11 @@
 
 ;; css
 (add-to-list 'auto-mode-alist '("\\.css$" . css-mode))
+(setq css-indent-offset 4)
+
+;; scss
+(add-to-list 'auto-mode-alist '("\\.scss$" . sass-mode))
+(setq sass-indent-offset 4)
 
 ;; less
 (add-to-list 'auto-mode-alist '("\\.less$" . less-css-mode))
