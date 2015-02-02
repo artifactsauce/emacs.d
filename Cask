@@ -34,6 +34,7 @@
 (depends-on "ruby-tools")
 (depends-on "ruby-end")
 (depends-on "go-mode")
+(depends-on "swift-mode")
 (depends-on "js2-mode")
 (depends-on "coffee-mode")
 (depends-on "css-mode")
