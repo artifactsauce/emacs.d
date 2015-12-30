@@ -51,3 +51,4 @@
 (depends-on "gitignore-mode")
 (depends-on "gitconfig-mode")
 (depends-on "gh")
+(depends-on "go-mode")
