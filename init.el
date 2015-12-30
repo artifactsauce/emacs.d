@@ -148,8 +148,9 @@
 
 ;; javascript
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-(setq c-basic-offset 4
-      js2-basic-offset 4
+(add-to-list 'auto-mode-alist '("\\.json$" . js2-mode))
+(setq c-basic-offset 2
+      js2-basic-offset 2
       indent-tabs-mode nil)
 
 ;; coffeescript
