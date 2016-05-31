@@ -35,6 +35,16 @@
 (electric-pair-mode 1)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; load for own environment
+(cond
+ ((string-match "24.5." emacs-version)
+  (load "~/.emacs.d/v24-5.el"))
+ ((string-match "24.4." emacs-version)
+  (load "~/.emacs.d/v24-4.el"))
+ ((string-match "24.3." emacs-version)
+  (load "~/.emacs.d/v24-3.el"))
+ )
+
 ; Clipboard copy and paste
 (when window-system
   (global-set-key "\C-w" 'clipboard-kill-region)
