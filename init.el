@@ -5,7 +5,12 @@
 ;;; Code:
 
 ;; cask
-(require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el")
+(cond
+ ((string-equal system-type "gnu/linux") ; Linux
+  (require 'cask "~/.cask/cask.el"))
+ ((string-equal system-type "darwin") ; Mac OS X
+  (require 'cask "/usr/local/share/emacs/site-lisp/cask/cask.el"))
+ )
 (cask-initialize)
 
 ;; global setting
