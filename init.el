@@ -25,7 +25,6 @@
 (setq delete-auto-save-files t)
 (setq require-final-newline t)
 (setq completion-ignore-case t)
-(tool-bar-mode 0)
 (global-auto-revert-mode 1)
 (exec-path-from-shell-initialize)
 (custom-set-variables
@@ -36,6 +35,11 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; load for own environment
+(if window-system
+    (load "~/.emacs.d/env/window.el")
+  (load "~/.emacs.d/env/terminal.el")
+  :)
+
 (cond
  ((string-match "24.5." emacs-version)
   (load "~/.emacs.d/v24-5.el"))
