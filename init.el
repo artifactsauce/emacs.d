@@ -40,6 +40,14 @@
   (load "~/.emacs.d/env/terminal.el")
   :)
 
+;; load files by os
+(cond
+ ((string-equal system-type "gnu/linux") ; Linux
+  (load "~/.emacs.d/env/darwin.el"))
+ ((string-equal system-type "darwin") ; Mac OS X
+  (load "~/.emacs.d/env/darwin.el"))
+ )
+
 (cond
  ((string-match "24.5." emacs-version)
   (load "~/.emacs.d/v24-5.el"))
@@ -48,37 +56,6 @@
  ((string-match "24.3." emacs-version)
   (load "~/.emacs.d/v24-3.el"))
  )
-
-; Clipboard copy and paste
-(when window-system
-  (global-set-key "\C-w" 'clipboard-kill-region)
-  (global-set-key "\M-w" 'clipboard-kill-ring-save)
-  (global-set-key "\C-y" 'clipboard-yank)
-  )
-(defun copy-from-osx ()
-  (shell-command-to-string "pbpaste"))
-
-(defun paste-to-osx (text &optional push)
-  (let ((process-connection-type nil))
-    (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
-      (process-send-string proc text)
-      (process-send-eof proc))))
-
-(setq interprogram-cut-function 'paste-to-osx)
-(setq interprogram-paste-function 'copy-from-osx)
-
-; Font setting
-(when window-system
-  (set-face-attribute 'default nil
-                      :family "Source Code Pro"
-                      :height 120)
-  (set-fontset-font
-   nil 'japanese-jisx0208
-   (font-spec :family "Migu 1M"))
-  (setq face-font-rescale-alist
-        '((".*Migu_1M.*" . 1.2)))
-  (load-theme 'solarized-dark t)
-  )
 
 ;; magit
 (global-set-key (kbd "C-x v s") 'magit-status)
