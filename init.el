@@ -34,7 +34,7 @@
 (electric-pair-mode 1)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-;; load for own environment
+;; load files by window
 (if window-system
     (load "~/.emacs.d/env/window.el")
   (load "~/.emacs.d/env/terminal.el")
@@ -48,6 +48,7 @@
   (load "~/.emacs.d/env/darwin.el"))
  )
 
+;; load files by version
 (cond
  ((string-match "24.5." emacs-version)
   (load "~/.emacs.d/v24-5.el"))
